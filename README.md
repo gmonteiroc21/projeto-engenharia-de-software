@@ -35,15 +35,15 @@ O escopo do projeto inclui o desenvolvimento de uma plataforma web com os seguin
 - O desenvolvimento do projeto deverá seguir as melhores práticas de engenharia de software e considerar a escalabilidade para futuras melhorias.
 
 ## 6. Equipe de Desenvolvimento:
-Será necessária uma equipe de desenvolvimento composta por:
-Diego Rafael - drgf@cin.ufpe.br
-Gabriel Barbosa - gbgo@cin.ufpe.br - Líder
-Gabriel Monteiro - gmcs@cin.ufpe.br
-João Felipe - jfbs@cin.ufpe.br
-Marcos Antonio - mavl@cin.ufpe.br
+Será necessária uma equipe de desenvolvimento composta por 5 membros, onde a cada período de entregas, revezaremos a posição de Project Manager:
+- Diego Rafael - drgf@cin.ufpe.br
+- Gabriel Barbosa - gbgo@cin.ufpe.br - Líder da Sprint
+- Gabriel Monteiro - gmcs@cin.ufpe.br
+- João Felipe - jfbs@cin.ufpe.br
+- Marcos Antonio - mavl@cin.ufpe.br
 
-- 2 Desenvolvedores Front-end - Diego Rafael, Marcos Antônio
-- 3 Desenvolvedores Back-end - Gabriel Barbosa, Gabriel Monteiro, João Felipe
+- **2 Desenvolvedores Front-end - Diego Rafael, Marcos Antônio**
+- **3 Desenvolvedores Back-end - Gabriel Barbosa, Gabriel Monteiro, João Felipe**
 
 ## 7. Considerações Finais:
 Este documento é a base inicial para o projeto E-Cycle. Ele será revisado e atualizado à medida que o projeto avança, incorporando os detalhes técnicos, cronograma detalhado, plano de testes e outras informações relevantes. O sucesso do projeto dependerá da colaboração e comprometimento de toda a equipe de desenvolvimento para alcançar os objetivos propostos e entregar uma plataforma de qualidade que contribua para o mapeamento e coleta sustentável do lixo eletrônico.
