@@ -36,6 +36,11 @@ O escopo do projeto inclui o desenvolvimento de uma plataforma web com os seguin
 
 ## 6. Equipe de Desenvolvimento:
 Será necessária uma equipe de desenvolvimento composta por:
+Diego Rafael - drgf@cin.ufpe.br
+Gabriel Barbosa - gbgo@cin.ufpe.br - Líder
+Gabriel Monteiro - gmcs@cin.ufpe.br
+João Felipe - jfbs@cin.ufpe.br
+Marcos Antonio - mavl@cin.ufpe.br
 
 - 2 Desenvolvedores Front-end - Diego Rafael, Marcos Antônio
 - 3 Desenvolvedores Back-end - Gabriel Barbosa, Gabriel Monteiro, João Felipe
