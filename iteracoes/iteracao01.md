@@ -15,6 +15,7 @@ Início da Iteração | Término da iteração
 
 ### O que foi feito
 | Atividade | Atribuição |
+| --- | --- |
 | Termo de Abertura do Projeto, PM Canvas, README | `João Felipe - jfbs` `Gabriel Barbosa - gbgo` |
 | Criação das plataformas que serão utilizadas (Jira, Repositório no GitHub) | `Gabriel Monteiro - gmcs`, `Diego Rafael - drgf` |
 | Definição de Design e Arquitetura da aplicação | `Marcos Antonio - mavl` |
