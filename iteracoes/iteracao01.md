@@ -11,7 +11,7 @@ Início da Iteração | Término da iteração
 | Atividade | Atribuição |
 | --- | --- |
 | Artefatos de Início do projeto | Todos os Participantes |
-| Prototipação primária |  |
+
 
 ### O que foi feito
 | Atividade | Atribuição |
