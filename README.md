@@ -47,3 +47,6 @@ Será necessária uma equipe de desenvolvimento composta por 5 membros, onde a c
 
 ## 7. Considerações Finais:
 Este documento é a base inicial para o projeto E-Cycle. Ele será revisado e atualizado à medida que o projeto avança, incorporando os detalhes técnicos, cronograma detalhado, plano de testes e outras informações relevantes. O sucesso do projeto dependerá da colaboração e comprometimento de toda a equipe de desenvolvimento para alcançar os objetivos propostos e entregar uma plataforma de qualidade que contribua para o mapeamento e coleta sustentável do lixo eletrônico.
+
+
+OBS.: A ferramenta de monitoramente do Quadro Kanban escolhida foi o Jira. Foi enviado um convite para o email do professor
