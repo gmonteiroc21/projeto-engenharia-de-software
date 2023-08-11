@@ -33,7 +33,7 @@ Definição do Tema | Diego Rafael, Gabriel Barbosa, Gabriel Monteiro, João Fel
 Criação do PM Canvas | Gabriel Barbosa, João Felipe 
 Criação do Termo de Abertura do Projeto | Gabriel Barbosa, João Felipe
 
-###Informações Adicionais
+### Informações Adicionais
 * Foi criado um Quadro Kanban no Jira Software e um diretório de documentações no Confluence
 * Cada card é atribuído com um prefixo:
     - IDE -> Se trata de tasks que envolvem ideação e propostas
