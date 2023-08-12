@@ -1,9 +1,9 @@
 const { Client } = require('pg');
-const func_conString = require("./conection_string");
+
 
 class Database {
-    constructor() {
-        this.conString = func_conString.stringDeConexao;
+    constructor(stringDeConexao) {
+        this.conString = stringDeConexao;
         this.client = new Client({
             connectionString: this.conString,
             ssl: { rejectUnauthorized: false }
@@ -17,6 +17,7 @@ class Database {
             return "Connected";
         } catch (error) {
             console.error("Erro ao conectar ao banco de dados:", error);
+            return "Not connected"
         }
     }
 
@@ -25,6 +26,7 @@ class Database {
             const result = await this.client.query(query);
             console.log("Registros da tabela:");
             console.log(result.rows);
+            return result;
         } catch (error) {
             console.error("Erro ao executar a consulta:", error);
         }
