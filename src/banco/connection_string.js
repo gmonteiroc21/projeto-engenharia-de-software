@@ -11,6 +11,7 @@ const conString = createConnectionString(process.env.PGHOST, process.env.PGUSER,
 
 module.exports = {
 
-    conString: conString // Exportando a string de conexão
+    conString: conString, // Exportando a string de conexão
+    createConnectionString: createConnectionString // Exportando a função para criar a string de conexão
 
 };
