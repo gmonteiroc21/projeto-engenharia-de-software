@@ -37,7 +37,7 @@ O escopo do projeto inclui o desenvolvimento de uma plataforma web com os seguin
 ## 6. Equipe de Desenvolvimento:
 Será necessária uma equipe de desenvolvimento composta por 5 membros, onde a cada período de entregas, revezaremos a posição de Project Manager:
 - Diego Rafael - drgf@cin.ufpe.br
-- Gabriel Barbosa - gbgo@cin.ufpe.br - Líder da Sprint
+- Gabriel Barbosa - gbgo@cin.ufpe.br
 - Gabriel Monteiro - gmcs@cin.ufpe.br
 - João Felipe - jfbs@cin.ufpe.br
 - Marcos Antonio - mavl@cin.ufpe.br
