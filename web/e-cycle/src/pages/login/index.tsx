@@ -12,23 +12,39 @@ import {
 } from "./styles";
 import Image from "next/image";
 import { useForm, SubmitHandler } from "react-hook-form";
+import { z } from "zod";
+import { zodResolver } from "@hookform/resolvers/zod";
 
-type LoginInputs = {
-  name: string;
-  email: string;
-  password: string;
-  confirmPassword: string;
-  phone: string;
-};
+const SignUpFormSchema = z
+  .object({
+    name: z.string().nonempty("O nome é obrigatório!"),
+    email: z
+      .string()
+      .nonempty("O email é obrigatório!")
+      .email("Insira um email válido!"),
+    password: z.string().nonempty("A senha é obrigatória"),
+    confirmPassword: z.string().nonempty("É obrigatório confirmar a senha"),
+    phone: z.string(),
+  })
+  .refine(({ password, confirmPassword }) => password === confirmPassword, {
+    message: "As senhas devem ser iguais!",
+    path: ["confirmPassword"],
+  });
+type SignUpFormInput = z.infer<typeof SignUpFormSchema>;
 
 export default function Login() {
-  const onSubmit: SubmitHandler<LoginInputs> = (data: LoginInputs) =>
-    console.log(data);
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
-  } = useForm<LoginInputs>();
+  } = useForm<SignUpFormInput>({
+    resolver: zodResolver(SignUpFormSchema),
+  });
+  const onSubmit: SubmitHandler<SignUpFormInput> = (data: SignUpFormInput) => {
+    console.log(data);
+    reset();
+  };
   return (
     <Container>
       <Image
@@ -41,38 +57,34 @@ export default function Login() {
         <LoginForm onSubmit={handleSubmit(onSubmit)}>
           <InputContainer>
             <StyledLabel>Nome</StyledLabel>
-            <BaseInput
-              placeholder="Digite seu nome"
-              {...register("name", { required: true })}
-            />
-            {errors.name && <ErrorSpan>Esse campo é obrigatório!</ErrorSpan>}
+            <BaseInput placeholder="Digite seu nome" {...register("name")} />
+            {errors.name && <ErrorSpan>{errors.name.message}</ErrorSpan>}
           </InputContainer>
           <InputContainer>
             <StyledLabel>Email</StyledLabel>
-            <BaseInput
-              placeholder="Digite seu email"
-              {...register("email", { required: true })}
-            />
-            {errors.email && <ErrorSpan>Esse campo é obrigatório!</ErrorSpan>}
+            <BaseInput placeholder="Digite seu email" {...register("email")} />
+            {errors.email && <ErrorSpan>{errors.email.message}</ErrorSpan>}
           </InputContainer>
           <InputContainer>
             <StyledLabel>Senha</StyledLabel>
             <BaseInput
               type="password"
               placeholder="Digite sua senha"
-              {...register("password", { required: true })}
+              {...register("password")}
             />
-            {errors.password && <ErrorSpan>Esse campo é obrigatório!</ErrorSpan>}
+            {errors.password && (
+              <ErrorSpan>{errors.password.message}</ErrorSpan>
+            )}
           </InputContainer>
           <InputContainer>
             <StyledLabel>Confirmar senha</StyledLabel>
             <BaseInput
               type="password"
               placeholder="Digite sua senha novamente"
-              {...register("confirmPassword", { required: true })}
+              {...register("confirmPassword")}
             />
             {errors.confirmPassword && (
-              <ErrorSpan>Esse campo é obrigatório!</ErrorSpan>
+              <ErrorSpan>{errors.confirmPassword.message}</ErrorSpan>
             )}
           </InputContainer>
           <InputContainer>
@@ -81,7 +93,7 @@ export default function Login() {
               placeholder="Digite seu telefone"
               {...register("phone")}
             />
-            {errors.phone && <ErrorSpan>Esse campo é obrigatório!</ErrorSpan>}
+            {errors.phone && <ErrorSpan>{errors.phone.message}</ErrorSpan>}
           </InputContainer>
           <SubmitInput type="submit" value="Cadastrar" />
         </LoginForm>

@@ -87,7 +87,7 @@ export const StyledLabel = styled.label`
   font-size: 25px;
   font-style: normal; 
   font-weight: 400;
-  line-height: normal;
+  line-height: normal; 
 `;
 
 export const ErrorSpan = styled.span`
