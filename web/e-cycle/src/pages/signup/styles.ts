@@ -25,10 +25,10 @@ export const Title = styled.div`
   font-family: Nunito;
   font-size: 60px;
   font-weight: 700;
-  margin-bottom: 1rem;
+  margin-bottom: 1rem; 
 `;
 
-export const LoginForm = styled.form`
+export const SignUpForm = styled.form`
   display: flex;
   flex-direction: column;
   gap: 1.2rem;
@@ -70,33 +70,33 @@ export const BaseInput = styled.input`
   }
 `;
 
+export const SubmitInput = styled(BaseInput)`
+  margin-top: 2rem;
+  cursor: pointer; 
+  color: #fff;
+  text-align: center;
+  &:hover {
+    opacity: 1.5; 
+  }
+`;
+
 export const StyledLabel = styled.label`
   color: #fff;
   text-align: center;
   font-family: Nunito;
   font-size: 25px;
-  font-style: normal;
+  font-style: normal; 
   font-weight: 400;
-  line-height: normal;
+  line-height: normal; 
 `;
 
 export const ErrorSpan = styled.span`
   margin-top: 10px;
   color: #fff;
-  text-align: center; 
+  text-align: center;
   font-family: Nunito;
   font-size: 15px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-`;
-
-export const SubmitInput = styled(BaseInput)`
-  margin-top: 2rem;
-  cursor: pointer;
-  color: #fff;
-  text-align: center;
-  &:hover {
-    opacity: 1.5;
-  }
 `;
