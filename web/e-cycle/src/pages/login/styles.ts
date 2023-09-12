@@ -32,21 +32,6 @@ export const LoginForm = styled.form`
   display: flex;
   flex-direction: column;
   gap: 1.2rem;
-  /* input[type="submit"] {
-    width: 462px;
-    height: 78px;
-    border-radius: 10px;
-    opacity: 0.7;
-    background: #949a5e;
-    border-style: none;
-    color: #fff;
-    text-align: center;
-    font-family: Nunito;
-    font-size: 1.5625rem;
-    font-weight: 400;
-    margin-top: 3.19rem;
-    cursor: pointer;
-  } */
 `;
 
 export const InputContainer = styled.div`
@@ -106,10 +91,11 @@ export const StyledLabel = styled.label`
 `;
 
 export const ErrorSpan = styled.span`
-  color: red;
+  margin-top: 10px;
+  color: #fff;
   text-align: center;
   font-family: Nunito;
-  font-size: 12px;
+  font-size: 15px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;

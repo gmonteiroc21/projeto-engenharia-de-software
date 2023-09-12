@@ -45,7 +45,7 @@ export default function Login() {
               placeholder="Digite seu nome"
               {...register("name", { required: true })}
             />
-            {errors.name && <ErrorSpan>Esse campo é obrigatório</ErrorSpan>}
+            {errors.name && <ErrorSpan>Esse campo é obrigatório!</ErrorSpan>}
           </InputContainer>
           <InputContainer>
             <StyledLabel>Email</StyledLabel>
@@ -53,7 +53,7 @@ export default function Login() {
               placeholder="Digite seu email"
               {...register("email", { required: true })}
             />
-            {errors.email && <span>Esse campo é obrigatório</span>}
+            {errors.email && <ErrorSpan>Esse campo é obrigatório!</ErrorSpan>}
           </InputContainer>
           <InputContainer>
             <StyledLabel>Senha</StyledLabel>
@@ -62,7 +62,7 @@ export default function Login() {
               placeholder="Digite sua senha"
               {...register("password", { required: true })}
             />
-            {errors.password && <span>Esse campo é obrigatório</span>}
+            {errors.password && <ErrorSpan>Esse campo é obrigatório!</ErrorSpan>}
           </InputContainer>
           <InputContainer>
             <StyledLabel>Confirmar senha</StyledLabel>
@@ -71,7 +71,9 @@ export default function Login() {
               placeholder="Digite sua senha novamente"
               {...register("confirmPassword", { required: true })}
             />
-            {errors.confirmPassword && <span>Esse campo é obrigatório</span>}
+            {errors.confirmPassword && (
+              <ErrorSpan>Esse campo é obrigatório!</ErrorSpan>
+            )}
           </InputContainer>
           <InputContainer>
             <StyledLabel>Telefone</StyledLabel>
@@ -79,7 +81,7 @@ export default function Login() {
               placeholder="Digite seu telefone"
               {...register("phone")}
             />
-            {errors.phone && <span>Esse campo é obrigatório</span>}
+            {errors.phone && <ErrorSpan>Esse campo é obrigatório!</ErrorSpan>}
           </InputContainer>
           <SubmitInput type="submit" value="Cadastrar" />
         </LoginForm>
