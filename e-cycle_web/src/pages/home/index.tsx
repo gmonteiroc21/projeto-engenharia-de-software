@@ -24,8 +24,8 @@ export default function Home() {
             alt="Imagem de globo terra na mão de uma pessoa"
           />
           <ButtonsContainer>
-            <StyledButton>BOTAO UM</StyledButton>
-            <StyledButton>BOTAO DOIS</StyledButton>
+            <StyledButton>QUERO RECOLHER</StyledButton>
+            <StyledButton>QUERO DESCARTAR</StyledButton>
           </ButtonsContainer>
         </OptionContainer>
         <InformationContainer>

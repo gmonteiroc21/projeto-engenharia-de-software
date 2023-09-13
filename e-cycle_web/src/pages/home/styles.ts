@@ -51,7 +51,7 @@ export const OptionContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: center; 
   max-width: 43rem;
   width: 50%;
   .HandImage {

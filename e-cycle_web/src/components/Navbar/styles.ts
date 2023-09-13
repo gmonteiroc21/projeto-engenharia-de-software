@@ -31,7 +31,7 @@ export const Navigation = styled.nav`
         border-bottom: 0.125rem solid #fff;
       } 
     }
-  } 
+  }  
 `;
 
 export const UserContainer = styled.div`
