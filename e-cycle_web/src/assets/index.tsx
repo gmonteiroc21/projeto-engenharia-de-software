@@ -1,3 +1,5 @@
 import PhoneInGreen from "./plantphone.png";
+import HandPhoto from "./handphoto.png";
+import Logo from "./logo.png";
 
-export { PhoneInGreen };
+export { PhoneInGreen, HandPhoto, Logo };
