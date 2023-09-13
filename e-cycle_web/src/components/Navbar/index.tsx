@@ -18,7 +18,7 @@ export const Navbar = () => {
             >
               Home
             </Link>
-          </li>
+          </li> 
           <li>
             <Link
               href="/sobre"
