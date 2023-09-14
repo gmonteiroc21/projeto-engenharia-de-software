@@ -1,8 +1,8 @@
 {
-  "name": "projeto-engenharia-de-software",
+  "name": "api",
   "version": "1.0.0",
   "description": "O objetivo desta documentação é fornecer uma visão geral do projeto E-Cycle, uma plataforma web que visa facilitar a coleta de lixo eletrônico através do mapeamento dos pontos de coleta disponíveis. A plataforma permitirá que os usuários registrem locais onde possuem lixo eletrônico para que as entidades coletoras possam identificar e planejar as melhores rotas para a coleta eficiente e sustentável desses resíduos eletrônicos.",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "jest"
   },
