@@ -1,11 +1,12 @@
 const { Pool } = require('pg');
+const config = require('./config');
 
 const pool = new Pool({
-  host: 'e-cycle.cmarkbil1dof.us-east-2.rds.amazonaws.com',
-  port: 5432,
-  database: 'bd_ecycle',
-  user: 'ecycle',
-  password: 'Gh5SYQO4F-iIWRxOa361Eg',
+  host: config.PGHOST,
+  port: config.PGPORT,
+  database: config.PGDATABASE,
+  user: config.PGUSER,
+  password: config.PGPASSWORD,
   ssl: {
     rejectUnauthorized: false
     }
