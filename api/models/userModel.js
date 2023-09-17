@@ -1,18 +1,35 @@
-const db = require('../config/db');
+const pool = require('../config/db');
+const bcrypt = require('bcrypt');
 
-const User = {};
+class User {
+  static async findByEmailOrPhone(email, telefone) {
+    const result = await pool.query(
+      'SELECT * FROM usuarios WHERE email = $1 OR telefone = $2',
+      [email, telefone]
+    );
+    return result.rows[0];
+  }
+  
+  static async create(email, senha, nome, telefone) {
+    const hashedPassword = await bcrypt.hash(senha, 10);
+    const result = await pool.query(
+      'INSERT INTO usuarios (email, senha, nome, telefone) VALUES ($1, $2, $3, $4) RETURNING *',
+      [email, hashedPassword, nome, telefone]
+    );
+    return result.rows[0];
+  }
 
-User.create = async (user) => {
-  const query = 'INSERT INTO usuarios (email, senha, telefone, nome) VALUES ($1, $2, $3, $4) RETURNING id';
-  const values = [user.email, user.senha, user.telefone, user.nome];
-  const result = await db.query(query, values);
-  return result.rows[0].id;
-};
+  static async findByEmail(email) {
+    const result = await pool.query('SELECT * FROM usuarios WHERE email = $1', [email]);
+    return result.rows[0];
+  }
 
-User.findByEmail = async (email) => {
-  const query = 'SELECT * FROM usuarios WHERE email = $1';
-  const result = await db.query(query, [email]);
-  return result.rows[0];
-};
+  static async findById(id) {
+    const result = await pool.query('SELECT * FROM usuarios WHERE id = $1', [id]);
+    return result.rows[0];
+  }
+
+  // Add other methods as needed
+}
 
 module.exports = User;
