@@ -39,7 +39,8 @@ class Ponto {
             'SELECT endereco FROM ponto_de_coleta WHERE id = $1',
             [id]
         );
-        return result.rows[0];
+        console.log(result.rows)
+        return result.rows;
     }
 
     static async verifyPonto(id) {
@@ -89,6 +90,14 @@ class Ponto {
             [id]
         );
         return result.rows[0];
+    }
+
+    static async findPontos(coletor_id) {
+        const result = await pool.query(
+            'SELECT endereco FROM ponto_de_coleta WHERE coletor_id = $1',
+            [coletor_id]
+        );
+        return result.rows;
     }
 }
 
