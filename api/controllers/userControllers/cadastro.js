@@ -13,5 +13,5 @@ module.exports = userController.create = async (req, res) => {
     }
 
     const user = await User.create(email, senha, nome, telefone);
-    res.json({'message': 'Usário criado com sucesso'});
+    res.json({ 'message': 'Usuário cadastrado com sucesso' });
 };
