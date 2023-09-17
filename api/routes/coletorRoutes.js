@@ -2,6 +2,7 @@ const express = require('express');
 const coletorControllerCadastrar = require('../controllers/coletorControllers/cadastro');
 const coletorControllerLogar = require('../controllers/coletorControllers/login');
 const coletorControllerAddPonto = require('../controllers/coletorControllers/addPonto');
+const coletorControllerColetar = require('../controllers/coletorControllers/coletarPonto');
 const Authentication = require('../middlewares/authMiddleware');
 
 const router = express.Router();
@@ -16,5 +17,6 @@ router.post('/login', coletorControllerLogar);
 router.put('/addPonto', Authentication.verifyToken, coletorControllerAddPonto);
 
 // Rota para coletar um ponto
+router.put('/coletar', Authentication.verifyToken, coletorControllerColetar);
 
 module.exports = router;

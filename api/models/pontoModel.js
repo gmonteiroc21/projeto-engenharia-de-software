@@ -66,6 +66,30 @@ class Ponto {
         );
         return result.rows[0];
     }
+
+    static async removeLixo(id) {
+        const result = await pool.query(
+            'UPDATE ponto_de_coleta SET tem_lixo = false WHERE id = $1',
+            [id]
+        );
+        return result.rows[0];
+    }
+
+    static async updateDataColeta(id) {
+        const result = await pool.query(
+            'UPDATE ponto_de_coleta SET ultima_coleta = $1 WHERE id = $2',
+            [data, id]
+        );
+        return result.rows[0];
+    }
+
+    static async removeColetor(id) {
+        const result = await pool.query(
+            'UPDATE ponto_de_coleta SET coletor_id = null WHERE id = $1',
+            [id]
+        );
+        return result.rows[0];
+    }
 }
 
 module.exports = Ponto;
