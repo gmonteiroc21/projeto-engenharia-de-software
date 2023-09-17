@@ -13,6 +13,8 @@ router.post('/cadastrar', coletorControllerCadastrar);
 router.post('/login', coletorControllerLogar);
 
 // Rota para atribuir um ponto para um coletor
-router.post('/addPonto', Authentication.verifyToken, coletorControllerAddPonto);
+router.put('/addPonto', Authentication.verifyToken, coletorControllerAddPonto);
+
+// Rota para coletar um ponto
 
 module.exports = router;

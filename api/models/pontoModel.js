@@ -2,10 +2,10 @@ const pool = require('../config/db');
 const data = new Date();
 
 class Ponto {
-    static async create(responsavel_id, endereco, coletor_id) {
+    static async create(responsavel_id, endereco) {
         const result = await pool.query(
-            'INSERT INTO ponto_de_coleta (responsavel_id, endereco, coletor_id, ultima_coleta, data_insercao) VALUES ($1, $2, $3, $4, $5) RETURNING *',
-            [responsavel_id, endereco, coletor_id, null, data]
+            'INSERT INTO ponto_de_coleta (responsavel_id, endereco, coletor_id, ultima_coleta, data_insercao, tem_lixo) VALUES ($1, $2, $3, $4, $5, $6) RETURNING *',
+            [responsavel_id, endereco, null, null, data, false]
         );
         return result.rows[0];
     }
@@ -20,7 +20,7 @@ class Ponto {
 
     static async findByResponsavel(id) {
         const result = await pool.query(
-            'SELECT * FROM usuarios WHERE id = $1',
+            'SELECT id FROM usuarios WHERE id = $1',
             [id]
         );
         return result.rows[0];
@@ -28,7 +28,7 @@ class Ponto {
 
     static async findByColetor(id) {
         const result = await pool.query(
-            'SELECT * FROM entidade_coletora WHERE id = $1',
+            'SELECT razao_social FROM entidade_coletora WHERE id = $1',
             [id]
         );
         return result.rows[0];
@@ -45,6 +45,23 @@ class Ponto {
     static async verifyPonto(id) {
         const result = await pool.query(
             'SELECT * FROM ponto_de_coleta WHERE id = $1 and coletor_id IS NOT NULL',
+            [id]
+        );
+        return result.rows[0];
+    }
+
+    static async verifyLixo(id) {
+        const result = await pool.query(
+            'SELECT * FROM ponto_de_coleta WHERE id = $1 and tem_lixo = true',
+            [id]
+        );
+        return result.rows[0];
+
+    }
+
+    static async addLixo(id) {
+        const result = await pool.query(
+            'UPDATE ponto_de_coleta SET tem_lixo = true WHERE id = $1',
             [id]
         );
         return result.rows[0];
