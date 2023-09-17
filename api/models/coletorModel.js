@@ -1,6 +1,6 @@
 const pool = require('../config/db');
 const bcrypt = require('bcrypt');
-const date = Date();
+const date = new Date();
 
 class Coletor {
 
@@ -29,9 +29,13 @@ class Coletor {
         return result.rows[0];
     }
 
-
-
-    // Add other methods as needed
+    static async createPonto(responsavel_id, endereco, coletor_id) {
+        const result = await pool.query(
+            'INSERT INTO ponto_de_coleta (responsavel_id, endereco, coletor_id, ultima_coleta, data_insercao) VALUES ($1, $2, $3, $4, $5) RETURNING *',
+            [responsavel_id, endereco, coletor_id, null, data]
+        );
+        return result.rows[0];
+    }
 }
 
 module.exports = Coletor;
