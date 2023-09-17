@@ -3,6 +3,7 @@ const bcrypt = require('bcrypt');
 var timestamp = new Date();
 
 class User {
+  
   static async findByEmailOrPhone(email, telefone) {
     const result = await pool.query(
       'SELECT * FROM usuarios WHERE email = $1 OR telefone = $2',
@@ -30,7 +31,13 @@ class User {
     return result.rows[0];
   }
 
-  // Add other methods as needed
+  static async createPonto(responsavel_id, endereco) {
+    const result = await pool.query(
+      'INSERT INTO ponto_de_coleta (responsavel_id, endereco, coletor_id, ultima_coleta, data_insercao) VALUES ($1, $2, $3, $4, $5) RETURNING *',
+      [responsavel_id, endereco, null, null, timestamp]
+    );
+    return result.rows[0];
+  }
 }
 
 module.exports = User;
