@@ -6,7 +6,6 @@ export const Container = styled.div`
     position: relative;
     background: #949A5E;
     padding-top: 8.5rem;
-    display: flex;
 `;
 
 export const GreenBackground = styled.div`

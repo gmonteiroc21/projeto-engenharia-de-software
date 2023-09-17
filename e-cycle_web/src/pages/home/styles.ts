@@ -6,6 +6,7 @@ export const Content = styled.div`
   justify-content: space-around;
   align-items: center;
   position: relative;
+  padding-top: 5.35rem;
 `;
 
 export const StyledButton = styled.button`

@@ -96,7 +96,7 @@ export const FormContainer = styled.form`
   gap: 1.2rem;
   position: relative;
   z-index: 1;
-  margin: auto;
+  padding-top: 2.8rem;
 `;
 
 export const UploadInput = styled(BaseInput)`
