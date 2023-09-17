@@ -5,7 +5,8 @@ export const Container = styled.div`
     min-height: 100vh;
     position: relative;
     background: #949A5E;
-    padding-top: 10rem;
+    padding-top: 8.5rem;
+    display: flex;
 `;
 
 export const GreenBackground = styled.div`
@@ -15,4 +16,4 @@ export const GreenBackground = styled.div`
   bottom: 0;
   z-index: 0;
   background: #3d6b01;
-`; 
+`;  

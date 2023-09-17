@@ -1,11 +1,10 @@
 import styled from "styled-components";
 
-export const Container = styled.div`
-  width: 100%;
-  min-height: 100vh;
+export const Content = styled.div`
   background: #949a5e;
   display: flex;
   justify-content: space-around;
+  align-items: center;
   position: relative;
 `;
 
@@ -58,6 +57,7 @@ export const OptionContainer = styled.div`
     margin-bottom: 2rem;
     width: 100%;
   }
+  position: relative;
   z-index: 1;
 `;
 
@@ -74,6 +74,7 @@ export const InformationContainer = styled.div`
   align-items: center;
   width: 45%;
   gap: 2rem;
+  position: relative;
   z-index: 1;
 `;
 

@@ -1,6 +1,5 @@
 import { HandPhoto, Logo } from "@/assets";
 import {
-  Container,
   StyledButton,
   Title,
   Paragraph,
@@ -8,15 +7,16 @@ import {
   ButtonsContainer,
   InformationContainer,
   GreenBackground,
+  Content,
 } from "./styles";
 import Image from "next/image";
 import { Navbar } from "@/components";
+import { Layout } from "@/components/Layout";
 
 export default function Home() {
   return (
-    <>
-      <Navbar />
-      <Container>
+    <Layout>
+      <Content>
         <OptionContainer>
           <Image
             className="HandImage"
@@ -38,8 +38,7 @@ export default function Home() {
             para a coleta eficiente e sustentável desses resíduos eletrônicos.
           </Paragraph>
         </InformationContainer>
-        <GreenBackground />
-      </Container>
-    </>
+      </Content>
+    </Layout>
   );
 }

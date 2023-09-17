@@ -9,11 +9,11 @@ export const NavbarContainer = styled.div`
   justify-content: space-between;
   align-items: center;
   position: fixed;
-  z-index: 2;
+  z-index: 2; 
 `; 
 
 export const Navigation = styled.nav`
-  color: #fff;
+  color: #fff; 
   text-align: center;
   font-family: Nunito;
   font-size: 1.875rem;

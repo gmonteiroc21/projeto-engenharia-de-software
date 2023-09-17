@@ -6,7 +6,7 @@ export const Container = styled.div`
   background: #949a5e;
   position: relative;
 `;
-
+ 
 export const StyledTitle = styled.h1`
   color: #fff;
   text-align: center;
@@ -94,9 +94,9 @@ export const FormContainer = styled.form`
   justify-content: center;
   align-items: center;
   gap: 1.2rem;
-  padding-top: 10rem;
   position: relative;
   z-index: 1;
+  margin: auto;
 `;
 
 export const UploadInput = styled(BaseInput)`
