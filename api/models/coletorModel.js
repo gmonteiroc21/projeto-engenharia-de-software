@@ -1,13 +1,14 @@
 const pool = require('../config/db');
 const bcrypt = require('bcrypt');
+const date = Date();
 
 class Coletor {
 
     static async create(cnpj, razao_social, senha) {
         const hashedPassword = await bcrypt.hash(senha, 10);
         const result = await pool.query(
-            'INSERT INTO entidade_coletora (cnpj, razao_social, senha) VALUES ($1, $2, $3) RETURNING *',
-            [cnpj, razao_social, hashedPassword]
+            'INSERT INTO entidade_coletora (cnpj, razao_social, senha, data_insercao) VALUES ($1, $2, $3, $4) RETURNING *',
+            [cnpj, razao_social, hashedPassword, date]
         );
         return result.rows[0];
     }

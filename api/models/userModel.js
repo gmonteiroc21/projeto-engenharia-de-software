@@ -1,5 +1,6 @@
 const pool = require('../config/db');
 const bcrypt = require('bcrypt');
+var timestamp = new Date();
 
 class User {
   static async findByEmailOrPhone(email, telefone) {
@@ -13,8 +14,8 @@ class User {
   static async create(email, senha, nome, telefone) {
     const hashedPassword = await bcrypt.hash(senha, 10);
     const result = await pool.query(
-      'INSERT INTO usuarios (email, senha, nome, telefone) VALUES ($1, $2, $3, $4) RETURNING *',
-      [email, hashedPassword, nome, telefone]
+      'INSERT INTO usuarios (email, senha, nome, telefone, data_insercao) VALUES ($1, $2, $3, $4, $5) RETURNING *',
+      [email, hashedPassword, nome, telefone, timestamp]
     );
     return result.rows[0];
   }
