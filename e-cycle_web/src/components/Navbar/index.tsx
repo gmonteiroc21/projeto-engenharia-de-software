@@ -18,7 +18,7 @@ export const Navbar = () => {
             >
               Home
             </Link>
-          </li> 
+          </li>
           <li>
             <Link
               href="/sobre"
@@ -29,7 +29,12 @@ export const Navbar = () => {
           </li>
           <li>
             {" "}
-            <Link href="/descarte">Descarte</Link>
+            <Link
+              href="/descarte"
+              className={router.pathname === "/descarte" ? "isActive" : ""}
+            >
+              Descarte
+            </Link>
           </li>
           <li>
             {" "}

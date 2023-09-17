@@ -10,7 +10,7 @@ export const NavbarContainer = styled.div`
   align-items: center;
   position: fixed;
   z-index: 2;
-`;
+`; 
 
 export const Navigation = styled.nav`
   color: #fff;
@@ -21,7 +21,7 @@ export const Navigation = styled.nav`
   font-weight: 400;
 
   ul {
-    display: flex;
+    display: flex; 
     justify-content: space-between;
     align-items: center;
     gap: 3.19rem; 
