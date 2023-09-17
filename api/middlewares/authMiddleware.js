@@ -32,8 +32,9 @@ class Authentication {
       if (err) {
         return res.status(500).json({ message: 'Failed to authenticate token.' });
       }
-      user = decoded.user;
+      user = decoded;
     })
+
     return user;
   }
 

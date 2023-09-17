@@ -19,19 +19,35 @@ class Ponto {
     }
 
     static async findByResponsavel(id) {
-        const resulta = await pool.query(
+        const result = await pool.query(
             'SELECT * FROM usuarios WHERE id = $1',
             [id]
         );
-        return resulta.rows[0];
+        return result.rows[0];
     }
 
     static async findByColetor(id) {
-        const resulta = await pool.query(
+        const result = await pool.query(
             'SELECT * FROM entidade_coletora WHERE id = $1',
             [id]
         );
-        return resulta.rows[0];
+        return result.rows[0];
+    }
+
+    static async findPontoById(id) {
+        const result = await pool.query(
+            'SELECT endereco FROM ponto_de_coleta WHERE id = $1',
+            [id]
+        );
+        return result.rows[0];
+    }
+
+    static async verifyPonto(id) {
+        const result = await pool.query(
+            'SELECT * FROM ponto_de_coleta WHERE id = $1 and coletor_id IS NOT NULL',
+            [id]
+        );
+        return result.rows[0];
     }
 }
 
