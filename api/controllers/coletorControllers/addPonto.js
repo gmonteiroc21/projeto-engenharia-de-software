@@ -38,6 +38,6 @@ module.exports = coletorController.addPonto = async (req, res) => {
 
     // Adicione o ponto ao coletor
     await Coletor.addPonto(coletor_id, ponto_id);
-    res.json({ 'message': 'Ponto adicionado com sucesso', 'endereco': existingPonto });
+    res.json({ 'message': 'Ponto adicionado com sucesso', existingPonto });
 
 }

@@ -3,6 +3,7 @@ const userControllerCadastrar = require('../controllers/userControllers/cadastro
 const userControllerLogar = require('../controllers/userControllers/login');
 const userControllerCadastrarPonto = require('../controllers/userControllers/cadastroPonto');
 const userControllerAddLixo = require('../controllers/userControllers/addLixo');
+const userControllerListarPontos = require('../controllers/userControllers/buscarPontos');
 const Authentication = require('../middlewares/authMiddleware');
 
 const router = express.Router();
@@ -18,5 +19,8 @@ router.post('/cadastrarPonto', Authentication.verifyToken, userControllerCadastr
 
 // Rota para adicionar lixo a um ponto
 router.put('/addLixo', Authentication.verifyToken, userControllerAddLixo);
+
+// Rota para listar os pontos de um usuário
+router.get('/pontos', Authentication.verifyToken, userControllerListarPontos);
 
 module.exports = router;

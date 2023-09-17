@@ -38,6 +38,14 @@ class User {
     );
     return result.rows[0];
   }
+
+  static async findPontos(responsavel_id) {
+    const result = await pool.query(
+      'SELECT endereco FROM ponto_de_coleta WHERE responsavel_id = $1',
+      [responsavel_id]
+    );
+    return result.rows;
+  }
 }
 
 module.exports = User;
