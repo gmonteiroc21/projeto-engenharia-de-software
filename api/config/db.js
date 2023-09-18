@@ -9,7 +9,7 @@ const pool = new Pool({
   password: config.PGPASSWORD,
   ssl: {
     rejectUnauthorized: false
-    }
+  }
 });
 
 module.exports = pool;

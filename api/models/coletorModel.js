@@ -29,13 +29,12 @@ class Coletor {
         return result.rows[0];
     }
 
-    static async createPonto(responsavel_id, endereco, coletor_id) {
+    static async addPonto(coletor_id, id) {
         const result = await pool.query(
-            'INSERT INTO ponto_de_coleta (responsavel_id, endereco, coletor_id, ultima_coleta, data_insercao) VALUES ($1, $2, $3, $4, $5) RETURNING *',
-            [responsavel_id, endereco, coletor_id, null, data]
+            'UPDATE ponto_de_coleta SET coletor_id = $1 WHERE id = $2 RETURNING *',
+            [coletor_id, id]
         );
         return result.rows[0];
     }
 }
-
 module.exports = Coletor;

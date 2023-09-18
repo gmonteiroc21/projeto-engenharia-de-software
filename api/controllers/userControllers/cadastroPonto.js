@@ -11,7 +11,7 @@ module.exports = userController.createPonto = async (req, res) => {
     const user = Authentication.verifyUser(bearerToken);
 
     // Verifique se o usuário logado é o mesmo que o responsável
-    if (user.id !== responsavel_id) {
+    if (user.user.id !== responsavel_id) {
         return res.status(401).json({ message: 'Você não pode cadastrar um ponto para outro usuário!' });
     }
 
@@ -21,7 +21,7 @@ module.exports = userController.createPonto = async (req, res) => {
     }
 
 
-    await Ponto.create(responsavel_id, endereco, coletor_id);
+    await Ponto.create(responsavel_id, endereco);
     res.json({ 'message': 'Ponto cadastrado com sucesso' });
 
 }
