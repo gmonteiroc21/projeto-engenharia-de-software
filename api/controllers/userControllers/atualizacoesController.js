@@ -3,7 +3,7 @@ const Authentication = require('../../middlewares/authMiddleware');
 
 const atualizacoesController = {};
 
-// Mapeamento de campos para funções do modelo User
+// mapeamento de campos para funções do modelo User
 const updatesUsuario = {
     email: User.updateEmail,
     senha: User.updateSenha,

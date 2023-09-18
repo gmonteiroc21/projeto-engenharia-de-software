@@ -36,5 +36,15 @@ class Coletor {
         );
         return result.rows[0];
     }
+
+    static async deletarConta(id) {
+        const result = await pool.query(
+            'DELETE FROM entidade_coletora WHERE id = $1 RETURNING *',
+            [id]
+        );
+        return result.rows[0];
+    }
+
+
 }
 module.exports = Coletor;

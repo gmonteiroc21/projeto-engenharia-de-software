@@ -24,6 +24,7 @@ router.put('/atualizar', Authentication.verifyToken, userAtualizacoesController)
 
 //Rota para deletar conta do usuário
 router.put('/deletar', Authentication.verifyToken, userDeletarContaController)
+
 // Rota para adicionar lixo a um ponto
 router.put('/addLixo', Authentication.verifyToken, userControllerAddLixo);
 
