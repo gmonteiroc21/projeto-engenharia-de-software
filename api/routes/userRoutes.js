@@ -4,6 +4,8 @@ const userControllerLogar = require('../controllers/userControllers/login');
 const userControllerCadastrarPonto = require('../controllers/userControllers/cadastroPonto');
 const userAtualizacoesController = require('../controllers/userControllers/atualizacoesController');
 const userDeletarContaController = require('../controllers/userControllers/deletarContaController');
+const userControllerAddLixo = require('../controllers/userControllers/addLixo');
+const userControllerListarPontos = require('../controllers/userControllers/buscarPontos');
 const Authentication = require('../middlewares/authMiddleware');
 
 const router = express.Router();
@@ -22,5 +24,10 @@ router.put('/atualizar', Authentication.verifyToken, userAtualizacoesController)
 
 //Rota para deletar conta do usuário
 router.put('/deletar', Authentication.verifyToken, userDeletarContaController)
+// Rota para adicionar lixo a um ponto
+router.put('/addLixo', Authentication.verifyToken, userControllerAddLixo);
+
+// Rota para listar os pontos de um usuário
+router.get('/pontos', Authentication.verifyToken, userControllerListarPontos);
 
 module.exports = router;

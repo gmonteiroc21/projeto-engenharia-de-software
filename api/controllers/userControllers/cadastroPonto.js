@@ -21,7 +21,7 @@ module.exports = userController.createPonto = async (req, res) => {
     }
 
 
-    await Ponto.create(responsavel_id, endereco, coletor_id);
+    await Ponto.create(responsavel_id, endereco);
     res.json({ 'message': 'Ponto cadastrado com sucesso' });
 
 }
