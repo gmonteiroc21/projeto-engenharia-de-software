@@ -5,8 +5,12 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 
+interface Props {
+  user: "coletor" | "descartador";
+}
+
 import { useAtivacaoDesativacao } from "../../contexts/button";
-export const Navbar = () => {
+export const Navbar = ({ user }: Props) => {
   const [larguraDaTela, setLarguraDaTela] = useState(window.innerWidth);
   const { ativado, toggleAtivacao } = useAtivacaoDesativacao();
 
@@ -44,27 +48,27 @@ export const Navbar = () => {
               Home
             </Link>
           </li>
-          <li>
-            <Link
-              href="/sobre"
-              className={router.pathname === "/sobre" ? "isActive" : ""}
-            >
-              Sobre
-            </Link>
-          </li>
-          <li>
-            {" "}
-            <Link
-              href="/descarte"
-              className={router.pathname === "/descarte" ? "isActive" : ""}
-            >
-              Descarte
-            </Link>
-          </li>
-          <li>
-            {" "}
-            <Link href="/mapa">Mapa</Link>
-          </li>
+          {user === "descartador" ? (
+            <li>
+              {" "}
+              <Link
+                href="/mapa"
+                className={router.pathname === "/mapa" ? "isActive" : ""}
+              >
+                Descarte
+              </Link>
+            </li>
+          ) : (
+            <li>
+              {" "}
+              <Link
+                href="/mapa"
+                className={router.pathname === "/mapa" ? "isActive" : ""}
+              >
+                Mapa
+              </Link>
+            </li>
+          )}
         </ul>
       </Navigation>
       <UserContainer>

@@ -23,7 +23,7 @@ export function Layout({ children }: LayoutChildren) {
   }, []);
   return (
     <AtivacaoDesativacaoProvider>
-      <Navbar />
+      <Navbar user={"coletor"} />
       {larguraDaTela <= 700 && <Sidebar user={"coletor"} />}
       <Container>
         {children}
