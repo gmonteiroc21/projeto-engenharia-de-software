@@ -99,6 +99,16 @@ class Ponto {
         );
         return result.rows;
     }
+
+    static async deletarPonto(id) {
+        const result = await pool.query(
+            'DELETE FROM ponto_de_coleta WHERE id = $1',
+            [id]
+        );
+        return result.rows;
+    }
+
+
 }
 
 module.exports = Ponto;
