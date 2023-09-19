@@ -8,6 +8,9 @@ export const Container = styled.div`
   justify-content: space-between;
   .PhonePlantPhoto {
     height: 100vh;
+    @media (max-width: 700px) {
+      display: none;
+    }
   }
 `;
 
@@ -26,6 +29,9 @@ export const Title = styled.div`
   font-size: 60px;
   font-weight: 700;
   margin-bottom: 1rem;
+  @media (max-width: 700px) {
+    font-size: 40px;
+  }
 `;
 
 export const LoginForm = styled.form`
@@ -51,6 +57,10 @@ export const InputContainer = styled.div`
   input {
     width: 462px;
     height: 78px;
+    @media (max-width: 700px) {
+      width: 100%;
+      height: 45px;
+    }
     border-radius: 10px;
     opacity: 0.7;
     background: #949a5e;
@@ -73,7 +83,7 @@ export const RadiosContainer = styled.div`
   color: #fff;
   text-align: center;
   font-family: Nunito;
-  font-size: 1.125rem; 
+  font-size: 1.125rem;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
@@ -82,6 +92,10 @@ export const RadiosContainer = styled.div`
 export const BaseInput = styled.input`
   width: 462px;
   height: 78px;
+  @media (max-width: 700px) {
+    width: 100%;
+    height: 45px;
+  }
   border-radius: 10px;
   opacity: 0.7;
   background: #949a5e;
