@@ -32,6 +32,15 @@ export const LoginForm = styled.form`
   display: flex;
   flex-direction: column;
   gap: 1.2rem;
+  a {
+    color: #fff;
+    text-align: center;
+    font-family: Nunito;
+    font-size: 1.125rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
 `;
 
 export const InputContainer = styled.div`
@@ -47,6 +56,27 @@ export const InputContainer = styled.div`
     background: #949a5e;
     border-style: none;
   }
+`;
+
+export const InputRadioContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+`;
+
+export const RadiosContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.38rem;
+  color: #fff;
+  text-align: center;
+  font-family: Nunito;
+  font-size: 1.125rem; 
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
 `;
 
 export const BaseInput = styled.input`
@@ -83,7 +113,7 @@ export const StyledLabel = styled.label`
 export const ErrorSpan = styled.span`
   margin-top: 10px;
   color: #fff;
-  text-align: center; 
+  text-align: center;
   font-family: Nunito;
   font-size: 15px;
   font-style: normal;
@@ -92,7 +122,6 @@ export const ErrorSpan = styled.span`
 `;
 
 export const SubmitInput = styled(BaseInput)`
-  margin-top: 2rem;
   cursor: pointer;
   color: #fff;
   text-align: center;
