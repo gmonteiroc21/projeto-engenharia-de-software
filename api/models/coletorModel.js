@@ -4,11 +4,11 @@ const date = new Date();
 
 class Coletor {
 
-    static async create(cnpj, razao_social, senha) {
+    static async create(cnpj, razao_social, senha, email) {
         const hashedPassword = await bcrypt.hash(senha, 10);
         const result = await pool.query(
-            'INSERT INTO entidade_coletora (cnpj, razao_social, senha, data_insercao) VALUES ($1, $2, $3, $4) RETURNING *',
-            [cnpj, razao_social, hashedPassword, date]
+            'INSERT INTO entidade_coletora (cnpj, razao_social, senha, email, data_insercao) VALUES ($1, $2, $3, $4, $5) RETURNING *',
+            [cnpj, razao_social, hashedPassword, email, date]
         );
         return result.rows[0];
     }

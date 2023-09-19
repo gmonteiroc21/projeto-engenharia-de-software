@@ -29,10 +29,12 @@ router.put('/deletar', Authentication.verifyToken, userDeletarContaController)
 // Rota para adicionar lixo a um ponto
 router.put('/addLixo', Authentication.verifyToken, userControllerAddLixo);
 
+//Rota para deletar um ponto de coleta
+router.put('/deletarPonto', Authentication.verifyToken, userControllerDeletarPonto);
+
 // Rota para listar os pontos de um usuário
 router.get('/pontos', Authentication.verifyToken, userControllerListarPontos);
 
-//Rota para deletar um ponto de coleta
-router.put('/deletarPonto', Authentication.verifyToken, userControllerDeletarPonto);
+
 
 module.exports = router;
