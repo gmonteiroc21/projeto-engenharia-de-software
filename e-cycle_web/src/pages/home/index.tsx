@@ -1,6 +1,5 @@
 import { HandPhoto, Logo } from "@/assets";
 import {
-  StyledButton,
   Title,
   Paragraph,
   OptionContainer,
@@ -12,8 +11,13 @@ import {
 import Image from "next/image";
 import { Navbar } from "@/components";
 import { Layout } from "@/components/Layout";
+import Link from "next/link";
 
-export default function Home() {
+interface HomeProps {
+  user: "coletor" | "descartador";
+}
+
+export default function Home({ user }: HomeProps) {
   return (
     <Layout>
       <Content>
@@ -24,8 +28,11 @@ export default function Home() {
             alt="Imagem de globo terra na mão de uma pessoa"
           />
           <ButtonsContainer>
-            <StyledButton>QUERO RECOLHER</StyledButton>
-            <StyledButton>QUERO DESCARTAR</StyledButton>
+            {user === "coletor" ? (
+              <Link href={"/mapa"}>Quero coletar</Link>
+            ) : (
+              <Link href={"/descarte"}>Quero descartar</Link>
+            )}
           </ButtonsContainer>
         </OptionContainer>
         <InformationContainer>

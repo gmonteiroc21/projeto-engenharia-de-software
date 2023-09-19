@@ -11,8 +11,8 @@ export const Container = styled.div`
 export const GreenBackground = styled.div`
   width: 100%;
   height: 60%;
-  position: absolute;
+  position: absolute; 
   bottom: 0;
-  z-index: 0;
+  z-index: 0; 
   background: #3d6b01;
 `;  

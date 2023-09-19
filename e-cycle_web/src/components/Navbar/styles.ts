@@ -10,8 +10,8 @@ export const NavbarContainer = styled.div`
   align-items: center;
   position: fixed;
   z-index: 2; 
-`; 
-
+`;  
+ 
 export const Navigation = styled.nav`
   color: #fff; 
   text-align: center;
