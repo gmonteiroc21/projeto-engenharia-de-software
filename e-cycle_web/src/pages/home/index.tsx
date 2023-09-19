@@ -1,22 +1,26 @@
 import { HandPhoto, Logo } from "@/assets";
 import {
-  Container,
-  StyledButton,
   Title,
   Paragraph,
   OptionContainer,
   ButtonsContainer,
   InformationContainer,
   GreenBackground,
+  Content,
 } from "./styles";
 import Image from "next/image";
 import { Navbar } from "@/components";
+import { Layout } from "@/components/Layout";
+import Link from "next/link";
 
-export default function Home() {
+interface HomeProps {
+  user: "coletor" | "descartador";
+}
+
+export default function Home({ user }: HomeProps) {
   return (
-    <>
-      <Navbar />
-      <Container>
+    <Layout>
+      <Content>
         <OptionContainer>
           <Image
             className="HandImage"
@@ -24,8 +28,11 @@ export default function Home() {
             alt="Imagem de globo terra na mão de uma pessoa"
           />
           <ButtonsContainer>
-            <StyledButton>QUERO RECOLHER</StyledButton>
-            <StyledButton>QUERO DESCARTAR</StyledButton>
+            {user === "coletor" ? (
+              <Link href={"/mapa"}>Quero coletar</Link>
+            ) : (
+              <Link href={"/descarte"}>Quero descartar</Link>
+            )}
           </ButtonsContainer>
         </OptionContainer>
         <InformationContainer>
@@ -38,8 +45,7 @@ export default function Home() {
             para a coleta eficiente e sustentável desses resíduos eletrônicos.
           </Paragraph>
         </InformationContainer>
-        <GreenBackground />
-      </Container>
-    </>
+      </Content>
+    </Layout>
   );
 }

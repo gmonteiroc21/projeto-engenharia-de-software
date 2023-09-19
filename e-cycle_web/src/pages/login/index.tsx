@@ -9,11 +9,14 @@ import {
   ErrorSpan,
   StyledLabel,
   SubmitInput,
+  RadiosContainer,
+  InputRadioContainer,
 } from "./styles";
 import { PhoneInGreen } from "@/assets";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
+import Link from "next/link";
 
 const LoginFormSchema = z.object({
   email: z
@@ -21,6 +24,7 @@ const LoginFormSchema = z.object({
     .nonempty("Digite um email!")
     .email("O email precisa ser válido!"),
   password: z.string().nonempty("Digite sua senha!"),
+  type: z.string().nonempty("Você precisa escolher seu formato de login!"),
 });
 
 type LoginFormInput = z.infer<typeof LoginFormSchema>;
@@ -56,7 +60,7 @@ export default function Login() {
           <InputContainer>
             <StyledLabel>Senha</StyledLabel>
             <BaseInput
-              type="password" 
+              type="password"
               placeholder="Digite sua senha"
               {...register("password")}
             />
@@ -64,7 +68,20 @@ export default function Login() {
               <ErrorSpan>{errors.password.message}</ErrorSpan>
             )}
           </InputContainer>
+          <InputRadioContainer>
+            <StyledLabel>Tipo</StyledLabel>
+            <RadiosContainer>
+              <label>Coletor</label>
+              <input type="radio" value="coletor" {...register("type")} />
+              <label>Descartador</label>
+              <input type="radio" value="descartador" {...register("type")} />
+            </RadiosContainer>
+            {errors.password && <ErrorSpan>{errors.type?.message}</ErrorSpan>}
+          </InputRadioContainer>
           <SubmitInput type="submit" value="Login" />
+          <Link href="/signup">
+            Ainda não tem uma conta? Cadastre-se agora!
+          </Link>
         </LoginForm>
       </Content>
     </Container>

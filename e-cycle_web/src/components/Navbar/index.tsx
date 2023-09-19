@@ -1,13 +1,42 @@
-import { HandPhoto, Logo } from "@/assets";
+import { HandPhoto, Logo, NavButton } from "@/assets";
 import { NavbarContainer, Navigation, UserContainer } from "./styles";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
 
-export const Navbar = () => {
+interface Props {
+  user: "coletor" | "descartador";
+}
+
+import { useAtivacaoDesativacao } from "../../contexts/button";
+export const Navbar = ({ user }: Props) => {
+  const [larguraDaTela, setLarguraDaTela] = useState(window.innerWidth);
+  const { ativado, toggleAtivacao } = useAtivacaoDesativacao();
+
+  useEffect(() => {
+    const atualizarTamanhoDaTela = () => {
+      setLarguraDaTela(window.innerWidth);
+    };
+
+    window.addEventListener("resize", atualizarTamanhoDaTela);
+
+    return () => {
+      window.removeEventListener("resize", atualizarTamanhoDaTela);
+    };
+  }, []);
   const router = useRouter();
+  console.log(larguraDaTela);
   return (
     <NavbarContainer>
+      {larguraDaTela <= 700 && (
+        <Image
+          className="buttonNav"
+          src={NavButton}
+          alt="botao que ative sidebar"
+          onClick={toggleAtivacao}
+        />
+      )}
       <Image src={Logo} alt="Logo do E-cycle" />
       <Navigation>
         <ul>
@@ -18,23 +47,28 @@ export const Navbar = () => {
             >
               Home
             </Link>
-          </li> 
-          <li>
-            <Link
-              href="/sobre"
-              className={router.pathname === "/sobre" ? "isActive" : ""}
-            >
-              Sobre
-            </Link>
           </li>
-          <li>
-            {" "}
-            <Link href="/descarte">Descarte</Link>
-          </li>
-          <li>
-            {" "}
-            <Link href="/mapa">Mapa</Link>
-          </li>
+          {user === "descartador" ? (
+            <li>
+              {" "}
+              <Link
+                href="/mapa"
+                className={router.pathname === "/mapa" ? "isActive" : ""}
+              >
+                Descarte
+              </Link>
+            </li>
+          ) : (
+            <li>
+              {" "}
+              <Link
+                href="/mapa"
+                className={router.pathname === "/mapa" ? "isActive" : ""}
+              >
+                Mapa
+              </Link>
+            </li>
+          )}
         </ul>
       </Navigation>
       <UserContainer>

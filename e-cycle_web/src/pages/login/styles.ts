@@ -8,6 +8,9 @@ export const Container = styled.div`
   justify-content: space-between;
   .PhonePlantPhoto {
     height: 100vh;
+    @media (max-width: 700px) {
+      display: none;
+    }
   }
 `;
 
@@ -26,12 +29,24 @@ export const Title = styled.div`
   font-size: 60px;
   font-weight: 700;
   margin-bottom: 1rem;
+  @media (max-width: 700px) {
+    font-size: 40px;
+  }
 `;
 
 export const LoginForm = styled.form`
   display: flex;
   flex-direction: column;
   gap: 1.2rem;
+  a {
+    color: #fff;
+    text-align: center;
+    font-family: Nunito;
+    font-size: 1.125rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
 `;
 
 export const InputContainer = styled.div`
@@ -42,6 +57,10 @@ export const InputContainer = styled.div`
   input {
     width: 462px;
     height: 78px;
+    @media (max-width: 700px) {
+      width: 100%;
+      height: 45px;
+    }
     border-radius: 10px;
     opacity: 0.7;
     background: #949a5e;
@@ -49,9 +68,34 @@ export const InputContainer = styled.div`
   }
 `;
 
+export const InputRadioContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+`;
+
+export const RadiosContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.38rem;
+  color: #fff;
+  text-align: center;
+  font-family: Nunito;
+  font-size: 1.125rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+`;
+
 export const BaseInput = styled.input`
   width: 462px;
   height: 78px;
+  @media (max-width: 700px) {
+    width: 100%;
+    height: 45px;
+  }
   border-radius: 10px;
   opacity: 0.7;
   background: #949a5e;
@@ -83,7 +127,7 @@ export const StyledLabel = styled.label`
 export const ErrorSpan = styled.span`
   margin-top: 10px;
   color: #fff;
-  text-align: center; 
+  text-align: center;
   font-family: Nunito;
   font-size: 15px;
   font-style: normal;
@@ -92,7 +136,6 @@ export const ErrorSpan = styled.span`
 `;
 
 export const SubmitInput = styled(BaseInput)`
-  margin-top: 2rem;
   cursor: pointer;
   color: #fff;
   text-align: center;
