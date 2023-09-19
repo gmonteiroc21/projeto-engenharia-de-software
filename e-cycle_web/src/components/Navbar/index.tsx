@@ -52,8 +52,8 @@ export const Navbar = ({ user }: Props) => {
             <li>
               {" "}
               <Link
-                href="/mapa"
-                className={router.pathname === "/mapa" ? "isActive" : ""}
+                href="/descarte"
+                className={router.pathname === "/descarte" ? "isActive" : ""}
               >
                 Descarte
               </Link>
