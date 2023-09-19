@@ -5,8 +5,10 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 
+import { useAtivacaoDesativacao } from "../../contexts/button";
 export const Navbar = () => {
   const [larguraDaTela, setLarguraDaTela] = useState(window.innerWidth);
+  const { ativado, toggleAtivacao } = useAtivacaoDesativacao();
 
   useEffect(() => {
     const atualizarTamanhoDaTela = () => {
@@ -28,6 +30,7 @@ export const Navbar = () => {
           className="buttonNav"
           src={NavButton}
           alt="botao que ative sidebar"
+          onClick={toggleAtivacao}
         />
       )}
       <Image src={Logo} alt="Logo do E-cycle" />

@@ -9,7 +9,7 @@ export const NavbarContainer = styled.div`
   justify-content: space-between;
   align-items: center;
   position: fixed;
-  z-index: 2;
+  z-index: 5;
   @media (max-width: 700px) {
     height: 4.25rem;
     justify-content: center;

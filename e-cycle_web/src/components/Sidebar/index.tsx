@@ -1,15 +1,17 @@
 import { HandPhoto } from "@/assets";
 import { Container, RouteContainer, UserContainer } from "./styles";
 import Link from "next/link";
-import { House } from "@phosphor-icons/react";
+import { useAtivacaoDesativacao } from "../../contexts/button";
 
 interface SidebarProps {
   user: "coletor" | "descartador";
 }
 
 export function Sidebar({ user }: SidebarProps) {
+  const { ativado, toggleAtivacao } = useAtivacaoDesativacao();
+  console.log(ativado)
   return (
-    <Container>
+    <Container isActive={ativado}>
       <UserContainer>
         <img className="UserPhoto" src={HandPhoto.src} alt="Foto do usuário" />
         Jaque Line
