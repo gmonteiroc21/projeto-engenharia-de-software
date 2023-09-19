@@ -77,6 +77,13 @@ class User {
     );
     return result.rows;
   }
+  static async findIdPontos(responsavel_id) {
+    const result = await pool.query(
+      'SELECT id FROM ponto_de_coleta WHERE responsavel_id = $1',
+      [responsavel_id]
+    );
+    return result.rows;
+  }
 }
 
 module.exports = User;

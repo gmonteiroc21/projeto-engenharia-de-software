@@ -4,7 +4,9 @@ const coletorControllerLogar = require('../controllers/coletorControllers/login'
 const coletorControllerAddPonto = require('../controllers/coletorControllers/addPonto');
 const coletorControllerColetar = require('../controllers/coletorControllers/coletarPonto');
 const coletorControllerListarPontos = require('../controllers/coletorControllers/buscarPontos');
+const coletorControllerDeletarConta = require('../controllers/coletorControllers/deletarConta')
 const Authentication = require('../middlewares/authMiddleware');
+const { route } = require('./userRoutes');
 
 const router = express.Router();
 
@@ -22,5 +24,8 @@ router.put('/coletar', Authentication.verifyToken, coletorControllerColetar);
 
 // Rota para listar os pontos de um coletor
 router.get('/pontos', Authentication.verifyToken, coletorControllerListarPontos);
+
+//Rota para deletar a conta do usuário coletor
+router.put('/deletar', Authentication.verifyToken, coletorControllerDeletarConta);
 
 module.exports = router;
