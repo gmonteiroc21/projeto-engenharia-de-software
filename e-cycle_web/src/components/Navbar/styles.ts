@@ -9,34 +9,51 @@ export const NavbarContainer = styled.div`
   justify-content: space-between;
   align-items: center;
   position: fixed;
-  z-index: 2; 
-`;  
- 
+  z-index: 2;
+  @media (max-width: 700px) {
+    height: 4.25rem;
+    justify-content: center;
+    align-items: center;
+    img:not(.buttonNav) {
+      width: 120px;
+      height: 50px;
+    }
+    .buttonNav {
+      position: absolute;
+      left: 2rem;
+    }
+  }
+`;
+
 export const Navigation = styled.nav`
-  color: #fff; 
+  color: #fff;
   text-align: center;
   font-family: Nunito;
   font-size: 1.875rem;
   font-style: normal;
   font-weight: 400;
 
+  @media (max-width: 700px) {
+    display: none;
+  }
+
   ul {
-    display: flex; 
+    display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 3.19rem; 
+    gap: 3.19rem;
     list-style: none;
     a {
       &.isActive {
         border-bottom: 0.125rem solid #fff;
-      } 
+      }
     }
-  }  
+  }
 `;
 
 export const UserContainer = styled.div`
   color: #fff;
-  text-align: center; 
+  text-align: center;
   font-family: Nunito;
   font-size: 1.875rem;
   font-style: normal;
@@ -50,5 +67,8 @@ export const UserContainer = styled.div`
     width: 4.375rem;
     height: 4.375rem;
     border-radius: 4.375rem;
+  }
+  @media (max-width: 700px) {
+    display: none;
   }
 `;

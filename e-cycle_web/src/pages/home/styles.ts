@@ -5,6 +5,7 @@ export const Content = styled.div`
   display: flex;
   @media (max-width: 700px) {
     flex-direction: column;
+    padding-top: 0;
   }
   justify-content: space-around;
   align-items: center;

@@ -1,13 +1,35 @@
-import { HandPhoto, Logo } from "@/assets";
+import { HandPhoto, Logo, NavButton } from "@/assets";
 import { NavbarContainer, Navigation, UserContainer } from "./styles";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
 
 export const Navbar = () => {
+  const [larguraDaTela, setLarguraDaTela] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const atualizarTamanhoDaTela = () => {
+      setLarguraDaTela(window.innerWidth);
+    };
+
+    window.addEventListener("resize", atualizarTamanhoDaTela);
+
+    return () => {
+      window.removeEventListener("resize", atualizarTamanhoDaTela);
+    };
+  }, []);
   const router = useRouter();
+  console.log(larguraDaTela);
   return (
     <NavbarContainer>
+      {larguraDaTela <= 700 && (
+        <Image
+          className="buttonNav"
+          src={NavButton}
+          alt="botao que ative sidebar"
+        />
+      )}
       <Image src={Logo} alt="Logo do E-cycle" />
       <Navigation>
         <ul>
