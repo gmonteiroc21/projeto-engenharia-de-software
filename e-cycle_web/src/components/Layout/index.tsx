@@ -8,23 +8,10 @@ interface LayoutChildren {
 }
 
 export function Layout({ children }: LayoutChildren) {
-  const [larguraDaTela, setLarguraDaTela] = useState(window.innerWidth);
-
-  useEffect(() => {
-    const atualizarTamanhoDaTela = () => {
-      setLarguraDaTela(window.innerWidth);
-    };
-
-    window.addEventListener("resize", atualizarTamanhoDaTela);
-
-    return () => {
-      window.removeEventListener("resize", atualizarTamanhoDaTela);
-    };
-  }, []);
   return (
     <AtivacaoDesativacaoProvider>
       <Navbar user={"descartador"} />
-      {larguraDaTela <= 700 && <Sidebar user={"coletor"} />}
+      <Sidebar user={"coletor"} />
       <Container>
         {children}
         <GreenBackground />

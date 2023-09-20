@@ -23,6 +23,11 @@ export const NavbarContainer = styled.div`
       left: 2rem;
     }
   }
+  .buttonNav {
+    @media (min-width: 700px) {
+      display: none !important;
+    }
+  }
 `;
 
 export const Navigation = styled.nav`

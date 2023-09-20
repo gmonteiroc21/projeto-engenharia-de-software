@@ -35,6 +35,9 @@ export const Container = styled.div<Props>`
     font-weight: 400;
     line-height: normal;
   }
+  @media (max-width: 700px) {
+    display: none;
+  }
 `;
 
 export const UserContainer = styled.div`

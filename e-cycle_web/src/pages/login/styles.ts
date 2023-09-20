@@ -13,7 +13,7 @@ export const Container = styled.div`
     }
   }
 `;
-
+ 
 export const Content = styled.main`
   display: flex;
   flex-direction: column;
@@ -143,3 +143,4 @@ export const SubmitInput = styled(BaseInput)`
     opacity: 1.5;
   }
 `;
+ 

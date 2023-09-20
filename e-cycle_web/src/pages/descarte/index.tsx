@@ -4,13 +4,10 @@ import {
   Container,
   ErrorSpan,
   FormContainer,
-  GreenBackground,
   InputContainer,
   StyledLabel,
   StyledTitle,
   SubmitInput,
-  UploadContainer,
-  UploadInput,
 } from "./styles";
 import { Layout } from "@/components/Layout";
 import { useForm, SubmitHandler } from "react-hook-form";
