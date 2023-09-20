@@ -20,11 +20,9 @@ O escopo do projeto inclui o desenvolvimento de uma plataforma web com os seguin
 - Formulário de Registro de Ponto de Coleta: Permitir que usuários cadastrados informem detalhes sobre o local de coleta de lixo eletrônico, como endereço, tipos de itens eletrônicos disponíveis, horários de disponibilidade, etc.
 - Mapa Interativo: Exibir um mapa interativo com marcadores que representam os pontos de coleta registrados.
 - Painel Administrativo: Oferecer uma área de administração para entidades coletoras gerenciarem os pontos de coleta, visualizarem estatísticas e otimizarem as rotas de coleta.
-- Recursos de Comunicação: Possibilitar a comunicação entre entidades coletoras e usuários para esclarecimento de dúvidas ou informações adicionais sobre os pontos de coleta.
 
 ## 4. Requisitos Iniciais:
-- A plataforma deve ser desenvolvida como uma aplicação web responsiva, acessível por dispositivos móveis e computadores.
-- Os usuários devem ser capazes de criar e gerenciar suas contas na plataforma.
+- A plataforma deve ser desenvolvida como uma aplicação web, acessível por dispositivos móveis e computadores.
 - O formulário de registro de ponto de coleta deve conter campos relevantes para coleta de informações necessárias.
 - Os pontos de coleta devem ser exibidos de forma visual no mapa interativo.
 - O painel administrativo deve permitir que as entidades coletoras atualizem informações dos pontos de coleta e gerem relatórios.
