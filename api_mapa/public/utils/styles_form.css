@@ -1,0 +1,49 @@
+/* Estilo para form.html */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0; /* Cor de fundo em tom de cinza claro */
+    margin: 0;
+    padding: 0;
+  }
+  
+  h3 {
+    text-align: center;
+    color: #228B22; /* Verde escuro */
+  }
+  
+  #address-form {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff; /* Fundo branco */
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); /* Sombra suave */
+  }
+  
+  label {
+    color: #228B22; /* Verde escuro */
+  }
+  
+  input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  input[type="submit"] {
+    background-color: #228B22; /* Verde escuro */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  
+  input[type="submit"]:hover {
+    background-color: #4CAF50; /* Verde mais claro no hover */
+  }
+  

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Map</title>
+    <style>
+      /* Set the size of the div element that contains the map */
+      #map {
+        height: 400px;
+        width: 100%;
+      }
+    </style>
+    <link rel="stylesheet" type="text/css" href="./utils/styles_map.css">
+  </head>
+  <body>
+    <div class="header">
+      <h3>e-cycle</h3>
+    </div>
+    <div>
+      <h3>Esses são os pontos do coletor</h3>
+    </div>
+    <div id="map"></div>
+    <a href="form.html">Selecionar Outro Coletor</a>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDuzn6i0Y26sdGgM4EeJz7bgzGdC0CLKhU&callback=initMap"
+    async defer></script>
+    <script src="./utils/map.js"></script>
+  </body>
+</html>
