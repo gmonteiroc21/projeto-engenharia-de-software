@@ -24,12 +24,15 @@ export const InputContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
+  @media (max-width: 700px) {
+    width: 100%;
+  }
 
   input {
     width: 462px;
     height: 78px;
     @media (max-width: 700px) {
-      width: 100%; 
+      width: 100%;
       height: 45px;
     }
     border-radius: 10px;
@@ -95,8 +98,11 @@ export const FormContainer = styled.form`
   position: relative;
   z-index: 1;
   padding-top: 2.8rem;
+  @media (max-width: 700px) {
+    width: 90%;
+  }
+  margin: auto;
 `;
-
 
 export const SubmitInput = styled(BaseInput)`
   margin-top: 2rem;
@@ -114,13 +120,10 @@ export const SubmitInput = styled(BaseInput)`
   font-weight: 400;
   line-height: normal;
   background-color: #fff;
-`;
-
-/* export const SubmitInput = styled(BaseInput)`
-  cursor: pointer;
-  color: #fff;
-  text-align: center;
-  &:hover {
-    opacity: 1.5;
+  @media (max-width: 700px) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
   }
-`; */
+`;
