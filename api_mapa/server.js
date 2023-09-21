@@ -1,21 +1,9 @@
 const express = require('express');
 const fs = require('fs');
 const transformToGeoloc = require('./public/transformToGeoloc');
-const { Pool } = require('pg');
+const pool = require('./config/db');
 const app = express();
 const port = process.env.PORT || 5000;
-
-// Configure your PostgreSQL connection pool
-const pool = new Pool({
-  user: 'ecycle',
-  host: 'e-cycle.cmarkbil1dof.us-east-2.rds.amazonaws.com',
-  database: 'bd_ecycle',
-  password: 'Gh5SYQO4F-iIWRxOa361Eg',
-  port: 5432, // Port number, adjust as needed
-  ssl: {
-    rejectUnauthorized: false,
-  }
-});
 
 // Middleware para processar solicitações JSON
 app.use(express.json());
