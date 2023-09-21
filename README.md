@@ -1,5 +1,7 @@
 # Documentação Inicial - Projeto de Engenharia de Software
 
+-- O processo sobre como rodar as APIs está dentro das pastas das mesmas como um arquivo no formato "readme.md"
+
 ## Nome do Projeto: E-Cycle - Plataforma para Mapeamento de Coleta de Lixo Eletrônico
 
 ## 1. Introdução:
